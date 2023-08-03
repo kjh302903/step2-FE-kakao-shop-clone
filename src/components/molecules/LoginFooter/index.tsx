@@ -1,18 +1,22 @@
 import TextLink from "@components/atoms/TextLink";
+import { staticServerUri } from "@utils/staticuri";
 import { styled } from "styled-components";
 
 const LoginFooter = () => {
   return (
     <Wrapper>
       <LinkWrapper>
-        <TextLink to={"/login"} children={"이용약관"} />
+        <TextLink to={staticServerUri + "/login"} children={"이용약관"} />
         <strong>
-          <TextLink to={"/login"} children={"개인정보 처리방침"} />
+          <TextLink
+            to={staticServerUri + "/login"}
+            children={"개인정보 처리방침"}
+          />
         </strong>
-        <TextLink to={"/login"} children={"운영정책"} />
-        <TextLink to={"/login"} children={"고객센터"} />
-        <TextLink to={"/login"} children={"공지사항"} />
-        <TextLink to={"/login"} children={"한국어"} />
+        <TextLink to={staticServerUri + "/login"} children={"운영정책"} />
+        <TextLink to={staticServerUri + "/login"} children={"고객센터"} />
+        <TextLink to={staticServerUri + "/login"} children={"공지사항"} />
+        <TextLink to={staticServerUri + "/login"} children={"한국어"} />
       </LinkWrapper>
       <p>
         Copyright ©<strong>Kakao Corp.</strong> All rights reserved.

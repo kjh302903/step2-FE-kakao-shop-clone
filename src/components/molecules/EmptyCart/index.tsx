@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import cart from "@assets/images/cart.png";
 import Button from "@components/atoms/Button";
 import { useNavigate } from "react-router-dom";
+import { staticServerUri } from "@utils/staticuri";
 
 const EmptyCart = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const EmptyCart = () => {
           color={"#fff"}
           fontSize={"14px"}
           onClick={() => {
-            navigate("/");
+            navigate(staticServerUri + "/");
           }}
         >
           쇼핑하기 홈

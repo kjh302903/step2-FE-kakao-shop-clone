@@ -5,6 +5,7 @@ import ProductInfo from "@components/molecules/ProductInfo";
 import ProductOption from "@components/molecules/ProductOption";
 import { styled } from "styled-components";
 import Loader from "@components/atoms/Loader";
+import { staticServerUri } from "@utils/staticuri";
 
 export interface Option {
   id: number;
@@ -32,7 +33,7 @@ const ProductForm = () => {
       retry: false,
       onError: (err: any) => {
         if (err.status === 404) {
-          navigate("/notFound");
+          navigate(staticServerUri + "/notFound");
         }
       },
     }

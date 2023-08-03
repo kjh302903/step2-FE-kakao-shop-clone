@@ -1,4 +1,5 @@
 import Button from "@components/atoms/Button";
+import { staticServerUri } from "@utils/staticuri";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
@@ -29,7 +30,7 @@ const NotFoundForm = () => {
             height={"40px"}
             background={"#fee500"}
             onClick={() => {
-              navigate("/");
+              navigate(staticServerUri + "/");
             }}
           >
             홈으로

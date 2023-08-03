@@ -4,6 +4,7 @@ import CartItem from "@components/atoms/CartItem";
 import { Item, Product } from "@components/organisms/CartForm";
 import { useMutation } from "@tanstack/react-query";
 import { comma } from "@utils/regex";
+import { staticServerUri } from "@utils/staticuri";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
@@ -59,7 +60,7 @@ const CartList = ({ item }: Props) => {
           onClick={() => {
             mutate(createPayload(items), {
               onSuccess: () => {
-                navigate("/order");
+                navigate(staticServerUri + "/order");
               },
               onError: (error) => {
                 console.log(error);

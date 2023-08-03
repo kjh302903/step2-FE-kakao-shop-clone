@@ -4,6 +4,7 @@ import CompleteList from "@components/molecules/CompleteList";
 import { comma } from "@utils/regex";
 import Button from "@components/atoms/Button";
 import { useNavigate } from "react-router-dom";
+import { staticServerUri } from "@utils/staticuri";
 
 export interface OptionWithQuantity extends Option {
   quantity: number;
@@ -43,7 +44,7 @@ const CompleteForm = ({ data }: Props) => {
           background={"#fee500"}
           fontSize={"20px"}
           onClick={() => {
-            navigate("/");
+            navigate(staticServerUri + "/");
           }}
         >
           쇼핑 계속하기

@@ -9,22 +9,29 @@ import Layout from "@pages/Layout";
 import NotFound from "@pages/NotFound";
 import Cart from "@pages/Cart";
 import Complete from "@pages/Complete";
+import { staticServerUri } from "@utils/staticuri";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path={staticServerUri + "/login"} element={<Login />} />
+          <Route path={staticServerUri + "/register"} element={<Register />} />
           <Route element={<Layout />}>
-            <Route path="/" element={<Main />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path={"/product/:id"} element={<Detail />} />
-            <Route path={"/order"} element={<Order />} />
-            <Route path={"/orders/complete/:id"} element={<Complete />} />
+            <Route path={staticServerUri + "/"} element={<Main />} />
+            <Route path={staticServerUri + "/cart"} element={<Cart />} />
+            <Route
+              path={staticServerUri + "/product/:id"}
+              element={<Detail />}
+            />
+            <Route path={staticServerUri + "/order"} element={<Order />} />
+            <Route
+              path={staticServerUri + "/orders/complete/:id"}
+              element={<Complete />}
+            />
           </Route>
-          <Route path="/*" element={<NotFound />} />
+          <Route path={staticServerUri + "/*"} element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

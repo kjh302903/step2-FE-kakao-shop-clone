@@ -1,4 +1,5 @@
 import ModalContainer from "@components/atoms/ModalContainer";
+import { staticServerUri } from "@utils/staticuri";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
@@ -18,7 +19,9 @@ const LoginModal = ({ onClick }: Props) => {
         </Contents>
         <ButtonWrapper>
           <button onClick={onClick}>취소</button>
-          <button onClick={() => navigate("/login")}>확인</button>
+          <button onClick={() => navigate(staticServerUri + "/login")}>
+            확인
+          </button>
         </ButtonWrapper>
       </Modal>
     </ModalContainer>

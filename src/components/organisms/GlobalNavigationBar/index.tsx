@@ -8,6 +8,7 @@ import { useState, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoginModal from "@components/molecules/LoginModal";
+import { staticServerUri } from "@utils/staticuri";
 
 const GlobalNavigationBar = () => {
   const selectedUser = useSelectedUser();
@@ -37,13 +38,13 @@ const GlobalNavigationBar = () => {
     if (selectedUser) {
       logOut();
     } else {
-      navigate("/login");
+      navigate(staticServerUri + "/login");
     }
   };
 
   const handleCart = () => {
     if (selectedUser) {
-      navigate("/cart");
+      navigate(staticServerUri + "/cart");
     } else {
       setModalOpen(true);
     }
@@ -63,7 +64,11 @@ const GlobalNavigationBar = () => {
       <Wrapper>
         <InnerContainer>
           <Contents>
-            <img src={logo} alt={"카카오 로고"} onClick={() => navigate("/")} />
+            <img
+              src={logo}
+              alt={"카카오 로고"}
+              onClick={() => navigate(staticServerUri + "/")}
+            />
             <ImgWrapper>
               <img src={cart} alt={"장바구니"} onClick={handleCart} />
             </ImgWrapper>

@@ -1,14 +1,15 @@
 import TextLink from "@components/atoms/TextLink";
+import { staticServerUri } from "@utils/staticuri";
 import { styled } from "styled-components";
 
 const AuthLink = () => {
   return (
     <Wrapper>
-      <TextLink to={"/register"} children={"회원가입"} />
+      <TextLink to={staticServerUri + "/register"} children={"회원가입"} />
       <Float>
-        <TextLink to={"/login"} children={"계정 찾기"} />
+        <TextLink to={staticServerUri + "/login"} children={"계정 찾기"} />
         <span></span>
-        <TextLink to={"/login"} children={"비밀번호 찾기"} />
+        <TextLink to={staticServerUri + "/login"} children={"비밀번호 찾기"} />
       </Float>
     </Wrapper>
   );

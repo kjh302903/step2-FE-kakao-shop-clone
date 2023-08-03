@@ -3,6 +3,7 @@ import InnerContainer from "@components/atoms/InnerContainer";
 import Loader from "@components/atoms/Loader";
 import CompleteForm from "@components/organisms/CompleteForm";
 import { useQuery } from "@tanstack/react-query";
+import { staticServerUri } from "@utils/staticuri";
 import { useNavigate, useParams } from "react-router-dom";
 import { styled } from "styled-components";
 
@@ -17,7 +18,7 @@ const CompleteTemplate = () => {
       retry: false,
       onError: (err: any) => {
         if (err.status === 404) {
-          navigate("/notFound");
+          navigate(staticServerUri + "/notFound");
         }
       },
     }

@@ -6,6 +6,7 @@ import InnerContainer from "@components/atoms/InnerContainer";
 import { styled } from "styled-components";
 import ProductGridSkeleton from "@components/organisms/ProductGridSkeleton";
 import { useNavigate } from "react-router-dom";
+import { staticServerUri } from "@utils/staticuri";
 
 const ProductTemplate = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const ProductTemplate = () => {
       getNextPageParam: (lastPage) => getNextParam(lastPage),
       onError: (err: any) => {
         if (err.status === 404) {
-          navigate("/notFound");
+          navigate(staticServerUri + "/notFound");
         }
       },
     });

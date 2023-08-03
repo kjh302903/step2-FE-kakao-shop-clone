@@ -9,6 +9,7 @@ import Button from "@components/atoms/Button";
 import { useMutation } from "@tanstack/react-query";
 import { postOrders } from "@apis/postOrders";
 import { useNavigate } from "react-router-dom";
+import { staticServerUri } from "@utils/staticuri";
 
 interface Props {
   item: Item;
@@ -47,11 +48,11 @@ const OrderForm = ({ item }: Props) => {
     mutate(payload, {
       onSuccess: (res) => {
         const id = res.data.response.id;
-        navigate(`/orders/complete/${id}`);
+        navigate(`${staticServerUri}/orders/complete/${id}`);
       },
       onError: (err: any) => {
         if (err.status === 404) {
-          navigate("/notFound");
+          navigate(staticServerUri + "/notFound");
         }
       },
     });

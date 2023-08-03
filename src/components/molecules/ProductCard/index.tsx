@@ -2,6 +2,7 @@ import Card from "@components/atoms/Card";
 import Photo from "@components/atoms/Photo";
 import { Product } from "@components/organisms/ProductGrid";
 import { comma } from "@utils/regex";
+import { staticServerUri } from "@utils/staticuri";
 import { styled } from "styled-components";
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 const ProductCard = ({ product }: Props) => {
   return (
     <CardWrapper>
-      <Card url={`/product/${product.id}`}>
+      <Card url={`${staticServerUri}/product/${product.id}`}>
         <Photo
           src={product.image}
           alt={product.productName}

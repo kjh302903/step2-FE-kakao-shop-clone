@@ -8,6 +8,7 @@ import ErrorMessage from "@components/atoms/ErrorMessage";
 import InputGroup from "@components/molecules/InputGroup";
 import { useInput } from "@hooks/useInput";
 import { styled } from "styled-components";
+import { staticServerUri } from "@utils/staticuri";
 
 const RegisterForm = () => {
   const { inputValue, passwordError, confirmError, onChange, onBlur } =
@@ -64,7 +65,7 @@ const RegisterForm = () => {
           password: inputValue.password,
           username: inputValue.name,
         });
-        navigate("/login");
+        navigate(staticServerUri + "/login");
       } catch (err) {
         console.log(err);
       }

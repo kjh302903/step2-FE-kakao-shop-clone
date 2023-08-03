@@ -9,6 +9,7 @@ import { useInput } from "@hooks/useInput";
 import { styled } from "styled-components";
 import { postLogin } from "@apis/postLogin";
 import ErrorMessage from "@components/atoms/ErrorMessage";
+import { staticServerUri } from "@utils/staticuri";
 
 const LoginForm = () => {
   const { inputValue, onChange } = useInput({ email: "", password: "" });
@@ -21,7 +22,7 @@ const LoginForm = () => {
       localStorage.setItem("timeStamp", new Date().getTime().toString());
       localStorage.setItem("token", res.headers.authorization);
       setLoginError((prev) => ({ ...prev, isError: false }));
-      navigate("/");
+      navigate(staticServerUri + "/");
     } catch (err) {
       setLoginError((prev) => ({
         ...prev,
