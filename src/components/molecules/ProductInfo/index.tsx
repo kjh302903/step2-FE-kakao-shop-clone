@@ -1,5 +1,6 @@
 import { ProductDetail } from "@components/organisms/ProductForm";
 import { comma } from "@utils/regex";
+import { staticServerUri } from "@utils/staticuri";
 import { styled } from "styled-components";
 
 interface Props {
@@ -13,7 +14,7 @@ const ProductInfo = ({ product }: Props) => {
 
   return (
     <Wrapper>
-      <img src={image} alt={productName} />
+      <img src={staticServerUri + image} alt={productName} />
       <SplitInfo>
         <Rating>
           {new Array(starCount).fill("").map((_, index) => (

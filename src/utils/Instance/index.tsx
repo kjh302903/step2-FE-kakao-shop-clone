@@ -2,7 +2,7 @@ import { staticServerUri } from "@utils/staticuri";
 import axios from "axios";
 
 const AxiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL + staticServerUri,
+  baseURL: staticServerUri + "api",
   timeout: 2000,
   headers: {
     "Content-Type": "application/json",

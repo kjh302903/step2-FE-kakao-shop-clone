@@ -14,7 +14,7 @@ const ProductCard = ({ product }: Props) => {
     <CardWrapper>
       <Card url={`${staticServerUri}/product/${product.id}`}>
         <Photo
-          src={product.image}
+          src={staticServerUri + product.image}
           alt={product.productName}
           width={"284px"}
           height={"157px"}
