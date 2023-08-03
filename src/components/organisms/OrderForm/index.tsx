@@ -26,9 +26,6 @@ const OrderForm = ({ item }: Props) => {
   const [agreePay, setAgreePay] = useState(false);
   const [agreePolicy, setAgreePolicy] = useState(false);
 
-  const agreePayRef = useRef<HTMLInputElement>(null);
-  const agreePolicyRef = useRef<HTMLInputElement>(null);
-
   const handleAgree = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
 
@@ -134,7 +131,6 @@ const OrderForm = ({ item }: Props) => {
               type="checkbox"
               id="agree"
               name="pay-agree"
-              ref={agreePayRef}
               checked={agreePay}
               onChange={handleAgree}
             />
@@ -145,7 +141,6 @@ const OrderForm = ({ item }: Props) => {
               type="checkbox"
               id="policy"
               name="policy-agree"
-              ref={agreePolicyRef}
               checked={agreePolicy}
               onChange={handleAgree}
             />
